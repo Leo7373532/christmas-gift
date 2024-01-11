@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexis Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Luminari&display=swap">
+    <style>
+        /* Your existing CSS styles */
+
+        .fullscreen-btn.clicked + .fullscreen,
+        .fullscreen.clicked {
+            display: block;
+        }
+
+        .fullscreen-emoji {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 24px;
+            animation: fallEmoji 4s linear infinite; /* Customize duration as needed */
+        }
+
+        @keyframes fallEmoji {
+            0% {
+                transform: translateY(-100%) translateX(-50%);
+            }
+            25% {
+                transform: translateY(100%) translateX(-50%);
+            }
+            50% {
+                transform: translateY(100%) translateX(-50%);
+            }
+            75% {
+                transform: translateY(100%) translateX(-50%);
+            }
+            100% {
+                transform: translateY(-100%) translateX(-50%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="banner">
+        <!-- Your banner content goes here -->
+    </div>
+
+    <div class="content">
+        <h1>To Alexis,</h1>
+        <p>A caring,
+           amazing, and beautiful person. </p>
+    </div>
+
+    <!-- Clickable button for full-screen background -->
+    <button class="fullscreen-btn" onclick="toggleFullscreen()">Click here!</button>
+
+    <!-- Full-screen background -->
+    <div class="fullscreen">
+        <div class="fullscreen-emoji">❤️</div> <!-- Heart emoji that falls down -->
+        <div class="fullscreen-content">
+        
+         <p></p>
+    <br>
+         <br>
+            <br>
+            <br>
+            <br>
+    <p></p>
+            
+            
+        <p></p>
+    <br>
+    <p></p>         
+            
+            
+            <h2>To Alexis,</h2>
+            <p>In a world of hues, where stories unfold,
+There's a tale of Alexis, with a heart of gold.
+Selfless and kind, her essence untold,
+In the realm of compassion, her virtues unfold.<p>
+
+<p>With eyes like emeralds, reflecting the light,
+A gaze that pierces through the darkest night.
+She extends a hand to those in need,
+A beacon of hope, a noble deed.<p>
+
+<p>In the tapestry of moments, where narratives weave,
+There's a chapter on Alexis, a soul who believes.
+To a canvas of dreams, she holds the key,
+Creating a world where all hearts are free.<p>
+
+<p>In her company, authenticity finds its voice,
+A sanctuary where I'm free to rejoice.
+With polite words and gestures, a thoughtful grace,
+She paints a picture of kindness, in every space.<p>
+
+<p>Green-eyed dreamer, with aspirations high,
+In the vast expanse of the open sky,
+May her dreams take flight, like a gentle breeze,
+Guided by purpose, through life's mysteries.<p>
+
+<p>Through the chapters of time, our story unfolds,
+With Alexis, a narrative of love and kindness molds.
+No clichés or trite lines, just a genuine rhyme,
+A chronicle of a love that stands the test of time.<p>
+
+
+
+
+
+.</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.querySelector('.fullscreen-btn');
+            var fullscreen = document.querySelector('.fullscreen');
+
+            btn.addEventListener('click', toggleFullscreen);
+            fullscreen.addEventListener('click', closeFullscreen);
+
+            function toggleFullscreen() {
+                btn.classList.toggle('clicked');
+                fullscreen.classList.toggle('clicked');
+
+                if (fullscreen.classList.contains('clicked')) {
+                    // Change the background image URL when the button is clicked
+                    fullscreen.style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(background2.jpg)';
+
+                    // Show falling heart emoji
+                    var emojiContainer = document.querySelector('.fullscreen-emoji');
+                    emojiContainer.style.display = 'block';
+                } else {
+                    btn.classList.remove('clicked');
+                    fullscreen.classList.remove('clicked');
+                    fullscreen.style.backgroundImage = '';
+
+                    // Hide falling emoji when closing the full-screen section
+                    var emojiContainer = document.querySelector('.fullscreen-emoji');
+                    emojiContainer.style.display = 'none';
+                }
+            }
+
+            function closeFullscreen() {
+                if (fullscreen.classList.contains('clicked')) {
+                    // If the full-screen background is open, close it
+                    btn.classList.remove('clicked');
+                    fullscreen.classList.remove('clicked');
+                    fullscreen.style.backgroundImage = '';
+
+                    // Hide falling emoji when closing the full-screen section
+                    var emojiContainer = document.querySelector('.fullscreen-emoji');
+                    emojiContainer.style.display = 'none';
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>
